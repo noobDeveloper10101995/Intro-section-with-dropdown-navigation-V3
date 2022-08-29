@@ -1,0 +1,181 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Epilogue', sans-serif;
+}
+
+:root{
+
+--AlmostWhite: hsl(0, 0%, 98%);
+--MediumGray: hsl(0, 0%, 41%);
+--AlmostBlack: hsl(0, 0%, 8%);
+
+}
+
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    width: 95%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+
+.flexB{
+    display: flex;
+}
+
+.navCover,
+.hamburgerbtn{
+    display: none;
+}
+
+.closeBtnContainer{
+    display: none;
+}
+
+
+
+#nav,
+.primary-navlist{
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.primary-navlist{
+    width: 90%;
+}
+
+.primary-navlist a{
+    color: var(--MediumGray)
+}
+
+.droplistAndOthers,
+.loginAndRegister{
+    align-items: center;
+}
+
+.droplistAndOthers > .col + .col,
+.loginAndRegister > .col + .col{
+    margin-left: 2.5em;
+}
+
+.registerBtn{
+    border: .1em solid var(--MediumGray);
+    padding: .5em 1em;
+    border-radius: .8em;
+}
+
+@media(max-width:1022px){
+    .primary-navlist{
+        justify-content: flex-end;
+       
+    }
+    .droplistAndOthers + .loginAndRegister{
+        margin-left: 2.5rem;
+    }
+}
+
+@media(max-width:773px){
+
+ 
+.navCover,
+.primary-navlist{
+    position: fixed;
+    z-index: 1;
+}
+
+.hamburgerbtn{
+    display: block;
+    position: absolute;
+    right: .6em;
+}
+
+
+
+.closeBtnContainer{
+    display: block;
+    position: absolute;
+    inset: 1em 1.5em 0 auto;
+}
+
+
+
+#nav,
+.primary-navlist{
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+    
+    .primary-navlist,
+    .droplistAndOthers,
+    .loginAndRegister{
+        flex-direction: column;
+    }
+
+    .navCover{
+        display: block;
+        inset: 0 auto 0 0;
+        width: 30%;
+        opacity:0;
+        margin-left: -7rem;
+        background-color: #000;
+    }
+
+    .navCover.active{
+        opacity: 60%;
+        margin-left: 0;
+    }
+
+    .primary-navlist{
+        inset: 0 0 0 auto;
+        width: 70%;
+        padding: min(15vh, 5rem) 1em;
+        opacity: 0;
+        margin-right: -16rem;
+        background-color: #fff;
+        pointer-events: none;
+    }
+
+    .primary-navlist.active{
+        opacity: 1;
+        margin-right: 0;
+    }
+
+.droplistAndOthers,
+.loginAndRegister{
+    align-items: flex-start;
+}
+
+.droplistAndOthers + .loginAndRegister{
+    margin-left: 0;
+    margin-top: 1.5em;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.droplistAndOthers > .col + .col,
+.loginAndRegister > .col + .col{
+    margin-left:0;
+    margin-top: 1.3em;
+}
+
+.registerBtn{
+    width: 95%;
+    max-width: 300px;
+    text-align: center;
+}
+}
+
