@@ -14,7 +14,13 @@
 --AlmostWhite: hsl(0, 0%, 98%);
 --MediumGray: hsl(0, 0%, 41%);
 --AlmostBlack: hsl(0, 0%, 8%);
+--DropListBg: #fff;
+--transition:.5s;
 
+}
+
+body{
+    background-color: var(--AlmostWhite);
 }
 
 
@@ -33,6 +39,13 @@ img{
 .flexB{
     display: flex;
 }
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 
 .navCover,
 .hamburgerbtn{
@@ -61,10 +74,31 @@ img{
     color: var(--MediumGray)
 }
 
+.primary-navlist a:hover{
+    color: var(--AlmostBlack);
+}
+
+.dropDownBtn{
+    position: relative;
+}
+
+.arrow{
+    position: absolute;
+    inset: .3rem -1rem auto auto;
+    transform: rotate(0);
+    transition: var(--transition);
+}
+
+.arrow.rotate{
+    transform: rotate(180deg);
+}
+
+
 .droplistAndOthers,
 .loginAndRegister{
     align-items: center;
 }
+
 
 .droplistAndOthers > .col + .col,
 .loginAndRegister > .col + .col{
@@ -76,6 +110,62 @@ img{
     padding: .5em 1em;
     border-radius: .8em;
 }
+
+.dropDowns{
+    position: absolute;
+    padding: 1.1em 1.5em;
+    
+    background-color: var(--DropListBg);
+    border-radius: .5rem;
+    box-shadow: 0 .1rem .4rem #999999;
+    
+}
+
+
+
+.featuresList,
+.companyList{
+  top: 4rem;
+}
+
+.featuresList{
+    /* left: 17.5rem; */
+    margin-left: -5rem;
+}
+
+.dropDowns > li .icons + a{
+    margin-left: .5em;
+}
+
+.dropDowns > li + li{
+    margin-top: 1.2em;
+}
+
+.featuresList{
+    margin-top: -10.8rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.companyList{
+    margin-top: -7.7rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.featuresList,
+.companyList{
+    transition: var(--transition);
+}
+
+.featuresList.active,
+.companyList.active{
+    margin-top: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
 
 @media(max-width:1022px){
     .primary-navlist{
@@ -110,6 +200,13 @@ img{
     inset: 1em 1.5em 0 auto;
 }
 
+.closeBtn{
+    transform: rotate(0);
+    transition: calc(.5s + var(--transition));
+}
+.closeBtn.rotate{
+    transform: rotate(180deg);
+}
 
 
 #nav,
@@ -154,10 +251,11 @@ img{
         pointer-events: auto;
     }
 
-.droplistAndOthers,
-.loginAndRegister{
+    
+  .droplistAndOthers,
+  .loginAndRegister{
     align-items: flex-start;
-}
+    }
 
 .droplistAndOthers + .loginAndRegister{
     margin-left: 0;
@@ -178,5 +276,19 @@ img{
     max-width: 300px;
     text-align: center;
 }
+
+.dropDowns{
+    position: initial;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.featuresList{
+    margin-left: 0;
+}
+
+
+
 }
 
