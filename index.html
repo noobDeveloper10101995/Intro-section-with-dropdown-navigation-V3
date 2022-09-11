@@ -13,17 +13,17 @@
 </head>
 <body>
     <nav id="nav" class="flexB container">
-        <div class="logo">
-            <img src="images\logo.svg" alt="">
+        <div role="Main Logo" class="logo">
+            <img src="images\logo.svg" alt="main-logo">
         </div>
-        <div class="hamburgerbtn"><a href="#"><img src="images\icon-menu.svg" alt=""></a></div>
+        <div role="Navigation Button" class="hamburgerbtn"><a href="#"><img src="images\icon-menu.svg" alt=""></a></div>
         <div class="navCover"></div>
-        <div class="primary-navlist flexB" aria-label="primary-navigation">
-            <div class="closeBtnContainer">
+        <div role="Navigation Container" class="primary-navlist flexB" aria-label="primary-navigation">
+            <div role="Close Button" class="closeBtnContainer">
                 <a href="#"><img class="closeBtn" src="images\icon-close-menu.svg" alt=""></a>
             </div>
            <div class="droplistAndOthers  flexB">
-            <div class="featuresWrapper col">
+            <div role="features SubList" class="featuresWrapper col">
                 <a class="dropDownBtn" href="#">Features <span><img class="arrow" src="images\icon-arrow-down.svg" alt=""></span></a>
                 <ul class="featuresList dropDowns">
                     <li> <span class="icons"><img src="images\icon-todo.svg" alt=""></span> <a href="#">Todo List</a></li>
@@ -32,7 +32,7 @@
                     <li> <span class="icons"><img src="images\icon-planning.svg" alt=""></span> <a href="#">Reminders</a></li>
                 </ul>
             </div>
-            <div class="companyWrapper col">
+            <div role="Company SubList" class="companyWrapper col">
                 <a class="dropDownBtn" href="#">Company <span><img class="arrow" src="images\icon-arrow-down.svg" alt=""></span></a>
                 <ul class="companyList dropDowns">
                     <li><a href="#">History</a></li>
@@ -53,7 +53,8 @@
 
     <div class="content flexB row">
         <div class="image">
-            <img src="images\image-hero-mobile.png" alt="">
+            <img class="mobileImg" src="images\image-hero-mobile.png" alt="">
+            <img class="desktopImg" src="images\image-hero-desktop.png" alt="">
         </div>
 
         <div class="typography container flexB">
@@ -65,15 +66,17 @@
             </p>
 
             <a href="#" class="learnMoreBtn row">Learn more</a>
+
+            <ul class="footer flexB row">
+        
+                <li> <img src="images\client-databiz.svg" alt=""></li>
+                <li> <img src="images\client-audiophile.svg" alt=""></li>
+                <li> <img src="images\client-meet.svg" alt=""></li>
+                <li> <img src="images\client-maker.svg" alt=""></li>
+            </ul>
         </div>
 
-        <ul class="footer flexB row">
         
-            <li> <img src="images\client-databiz.svg" alt=""></li>
-            <li> <img src="images\client-audiophile.svg" alt=""></li>
-            <li> <img src="images\client-meet.svg" alt=""></li>
-            <li> <img src="images\client-maker.svg" alt=""></li>
-        </ul>
     </div>
 
 
